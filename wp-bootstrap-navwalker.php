@@ -98,6 +98,8 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 
 				if ( empty( $item->attr_title ) ) {
 					$atts['title']  = ! empty( $item->title )   ? strip_tags( $item->title ) : '';
+                                      //if Want to update for Bootstrap V4
+					$atts['class']  ='nav-link';
 				} else {
 					$atts['title'] = $item->attr_title;
 				}
@@ -108,7 +110,8 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 				if ( $args->has_children && 0 === $depth ) {
 					$atts['href']           = '#';
 					$atts['data-toggle']    = 'dropdown';
-					$atts['class']          = 'dropdown-toggle';
+					//if Want to update for Bootstrap V4
+					$atts['class']          = 'dropdown-toggle nav-link';
 					$atts['aria-haspopup']  = 'true';
 				} else {
 					$atts['href'] = ! empty( $item->url ) ? $item->url : '';
